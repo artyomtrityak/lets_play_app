@@ -1,3 +1,4 @@
+/*@flow*/
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
@@ -10,6 +11,7 @@ import React, {
   Text,
   View
 } from 'react-native';
+
 
 class lets_play_app extends Component {
   render() {
