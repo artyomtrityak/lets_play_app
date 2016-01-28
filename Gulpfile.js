@@ -12,5 +12,5 @@ let make = () => {
 };
 
 gulp.task('watch', (onTaskDone) => {
-  return gulp.watch('**/*.js', make);
+  return gulp.watch('./**/*.js', make);
 });
