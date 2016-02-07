@@ -5,25 +5,57 @@ import React, {
   Component,
   StyleSheet,
   Text,
-  View
+  View,
+  TabBarIOS
 } from 'react-native';
 
 
-class AppContainer extends Component {
-  render() : ReactElement {
+import Icon from 'react-native-vector-icons/FontAwesome';
+
+
+export default class AppContainer extends Component {
+  render(): ReactElement {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
+     <TabBarIOS
+        tintColor="white"
+        barTintColor="black">
+        <Icon.TabBarItem
+          badge={1}
+          title="Dashboard"
+          iconName="th-list"
+          selectedIconName="th-list"
+          selected={true}
+          onPress={() => {
+            this.selectTab('dashboard');
+            DashboardComponent.refresh(true);
+          }}>
+
+          <View><Text>Hello</Text></View>
+
+        </Icon.TabBarItem>
+
+        <Icon.TabBarItem
+          title="Friends"
+          iconName="users"
+          selectedIconName="users"
+          badge={12}
+          selected={false}>
+
+          <View><Text>Hello2</Text></View>
+
+        </Icon.TabBarItem>
+
+        <Icon.TabBarItem
+          title="Profile"
+          iconName="gear"
+          selectedIconName="gear"
+          selected={false}>
+
+          <View><Text>Hello2</Text></View>
+
+        </Icon.TabBarItem>
+
+      </TabBarIOS>
     );
   }
 }
@@ -46,5 +78,3 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
-
-export default AppContainer;

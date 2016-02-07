@@ -9,10 +9,9 @@ import reducers from '../reducers';
 import App from '../containers/app.container';
 
 
-const createStoreWithMiddleware : Function = applyMiddleware(thunk)(createStore);
-let store : Object = createStoreWithMiddleware(reducers);
+let store: Object = createStore(reducers, applyMiddleware(thunk));
 
-class RootContainer extends Component {
+export default class RootContainer extends Component {
   render() : ReactElement {
     return (
       <Provider store={store}>
@@ -21,5 +20,3 @@ class RootContainer extends Component {
     );
   }
 }
-
-export default RootContainer;

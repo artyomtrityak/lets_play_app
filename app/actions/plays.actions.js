@@ -1,7 +1,7 @@
 /*@flow*/
 'use strict';
 
-//Plays actions
+
 export const PLAYS_LOADED : string = 'PLAYS_LOADED';
 
 
